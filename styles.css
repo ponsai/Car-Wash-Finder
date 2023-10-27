@@ -1,0 +1,11 @@
+
+/* Custom styles */
+body {
+    padding: 50px;
+}
+
+#checkoutButtonTop {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
