@@ -1,0 +1,35 @@
+/* Custom styles */
+
+
+#checkoutButtonTop {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+h3 {
+    color: #c5c518;
+}
+
+h1 {
+    color: #00457E;
+}
+#trueBackground{
+
+    background-color: #00457E;
+}
+
+#DetailsBackGround{
+
+}
+
+#cardBackground{
+
+    margin-top: 50px;
+    background-color: #5df3e2;
+}
+#amongus{
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
