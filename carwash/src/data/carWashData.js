@@ -1,0 +1,70 @@
+const carWashData = [
+    {
+        name: "Carwash Location 1",
+        address: "456 Sparkle St, Brighttown",
+        services: [{id:1 ,name: "Exterior Wash"}, {id:2 ,name: "Interior Cleaning"},{id:3 ,name: "Waxing"}],
+        phone: "123-456-7890",
+        email: "carwash1@example.com",
+        image: "/images/1.jpg",
+    },
+    {
+        name: "Carwash Location 2",
+        address: "789 Downtown Rd, City Center",
+        services: [{id:1 ,name: "Exterior Wash"},{id:2 ,name: "Vacuuming"}, {id:3 ,name: "Polishing"}],
+        phone: "987-654-3210",
+        email: "carwash2@example.com",
+        image: "/images/1.jpg",
+    },
+    {
+        name: "Carwash Location 3",
+        address: "987 Downtown Rd, City Center",
+        services: [{id:1 ,name: "Full Service Wash"}, {id:2 ,name: "Interior Detailing"}],
+        phone: "555-123-4567",
+        email: "carwash3@example.com",
+        image: "/images/1.jpg",
+    },
+    {
+        name: "Carwash Location 4",
+        address: "789 india St, South Park",
+        services: [{id:1 ,name: "Full Service Wash"}, 
+        {id:2 ,name: "Interior Detailing"}],
+        phone: "555-123-1355",
+        email: "carwash3@example.com",
+        image: "/images/1.jpg",
+    },
+    {
+        name: "Carwash Location 5",
+        address: "533 Normal St, Oak Town",
+        services: [{id:1 ,name: "Full Service Wash"}, {id:2 ,name: "Interior Detailing"}],
+        phone: "555-123-0955",
+        email: "carwash3@example.com",
+        image: "/images/1.jpg",
+    },
+    {
+        name: "Carwash Location 6",
+        address: "123 Sunshine Ave, Sunnyville",
+        services: [{id:1 ,name: "Full Service Wash"}, {id:2 ,name: "Interior Detailing"}],
+        phone: "555-123-0955",
+        email: "carwash3@example.com",
+        image: "/images/1.jpg",
+    },
+    // {
+    //     name: "Carwash Location 7",
+    //     address: "533 Normal St, City",
+    //     services: [{id:1 ,name: "Full Service Wash"}, {id:2 ,name: "Interior Detailing"}],
+    //     phone: "555-123-0955",
+    //     email: "carwash3@example.com",
+    //     image: "/images/1.jpg",
+    // },
+    // {
+    //     name: "Carwash Location 8",
+    //     address: "533 Normal St, City",
+    //     services: [{id:1 ,name: "Full Service Wash"}, {id:2 ,name: "Interior Detailing"}],
+    //     phone: "555-123-0955",
+    //     email: "carwash3@example.com",
+    //     image: "/images/1.jpg",
+    // },
+
+];
+
+export default carWashData;
