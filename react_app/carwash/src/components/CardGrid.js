@@ -11,9 +11,8 @@
 * Footer
 */
 import React, { useState } from 'react';
-//import React from 'react';
-import './CardGrid.css'; // Import the CSS file
-import Rating from '@mui/material/Rating'; // Import Rating from Material-UI
+import '../CardGrid.css'; // Import the CSS file
+
 const DetailGrid = () => {
 
     const detailData = [
@@ -60,14 +59,16 @@ const DetailGrid = () => {
             image: "/images/6.jpg"
         },
     ];
-    //used to keep track of rating
+    /*
+
+    used to keep track of rating
     const [userRatings, setUserRatings] = useState(Array(detailData.length).fill(3.5));
     const handleRatingChange = (index, value) => {
         const newRatings = [...userRatings];
         newRatings[index] = value;
         setUserRatings(newRatings);
     };
-
+*/
     return (
 
         <div className="card-grid">
@@ -84,13 +85,7 @@ const DetailGrid = () => {
                         <p className="value">{location.overview}</p>
                     </div>
 
-                    <p className="label">Ratings</p>
-                    <Rating
-                        name={`rating-${index}`}
-                        value={userRatings[index]}
-                        precision={0.5}
-                        onChange={(event, value) => handleRatingChange(index, value)}
-                    />
+
 
                     <div className="info-section">
                         <p className="label">Reviews</p>
