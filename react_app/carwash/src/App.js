@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Details from './components/Details';
 import Locations from './components/Locations';
 import About from './components/About';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Router>
           <Navigationbar/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/Details" component={Details} />
             <Route exact path="/Locations" component={Locations} />
             <Route exact path="/About" component={About} />
