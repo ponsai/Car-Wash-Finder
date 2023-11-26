@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import '../CardGrid.css';
-import DetailGrid from "./CardGrid";
+import './details/CardGrid.css';
+import DetailGrid from "./details/CardGrid";
 const Details = () => {
     return(
         <div className="details-container">
