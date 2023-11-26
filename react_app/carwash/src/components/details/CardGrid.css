@@ -1,0 +1,79 @@
+/* CardGrid.css */
+body.details-page {
+    background-color: #117fff ;
+}
+
+.details-container {
+    background-color: #00457e;
+
+}
+
+.details-container h1{
+
+    font-weight: bold;
+    color: #ffffff; /* Text color */
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px;
+    background-color: #00457e;
+}
+
+.card {
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card img {
+    /*Styling the CarWashLocation images*/
+    max-width: 100%;
+    height: calc(30vh - 20px); /* Set the height to 30% of the viewport height, subtracting margin and padding */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    margin: 0 auto; /* Center the image horizontally */
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners */
+
+
+}
+
+.card h2 {
+    margin-top: 0;
+    font-weight: bold;
+    /*font-family: "Arial";*/
+
+    margin-bottom: 8px;
+    font-size: 3rem;
+    color: #000000; /* Text color */
+}
+
+.card .info-section {
+    margin-bottom: 10px;
+}
+
+/*Edit words like [Address,Overview,Ratings,Reviews]*/
+.card .label {
+
+    font-weight: bold;
+    font-size: 160%;
+    text-decoration: underline;
+    color: #000000; /* Text color for labels */
+}
+
+
+/* Edit text inside  */
+.card .value {
+
+    font-size: 130%;
+    /*font-family: "Arial";*/
+    color: #000000;
+}
+
+.card .reviews {
+    /* Add specific styles for the reviews section if needed */
+}
