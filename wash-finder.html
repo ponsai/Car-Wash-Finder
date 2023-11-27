@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bubbles N Brilliance</title>
+    <title>BnB</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
           crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/details.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="container">
     <h1>
-        <img src="css/icon_soap.svg" width="75" height="75" alt=""/>
+        <img src="icon_soap.svg" width="75" height="75" alt=""/>
         Bubbles N Brilliance
     </h1>
 </div>
 
-<!-- Navbar-->
+<!-- Start Navbar -->
 <nav class="navbar navbar-expand-lg" style="background-color:#2F70AF">
     <div class="container">
         <button
@@ -46,31 +46,53 @@
                 </li>
             </ul>
         </div>
+        <div class="col-md-4 text-right">
+            <button class="btn btn-primary" onclick="checkout()">Checkout (<span id="cartCounter">0</span>)</button>
+        </div>
     </div>
 </nav>
-<!-- End of Navbar-->
-<div class = "container-fluid" id = trueBackground>
+<!-- End Navbar -->
 
-<div class = "container-fluid" id = "DetailsBackGround">
-<div class="container-xxl">
-    <div class="row" id = "amongus">
-        <div class="col-9" >
-            <div class="row" id="DetailsContainer">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-9">
+            <div class="row" id="carWashContainer">
                 <!-- Car wash cards will go here -->
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 
+    <!-- Checkout form -->
+    <div class="mt-5">
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label for="locationSelect">Select Location:</label>
+                <select class="form-control" id="locationSelect" onchange="updateServiceOptions()">
+                    <!-- Car wash locations will go here -->
+                </select>
+            </div>
+            <div class="form-group" id="servicesList">
+                <!-- Checkboxes for services will go here -->
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone">
+            </div>
+            <button type="button" class="btn btn-success btn-block" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+</div>
 
 <footer style="background-color:#2F70AF" class="p-5 text-white text-center position-relative">
     <div class="container">
         <p class="lead"> Copyright &copy; 2023 Bubbles N Brilliance</p>
     </div>
-
 </footer>
+
+<script src="script.js"></script>
 </body>
-<script src="details.js"></script>
 </html>

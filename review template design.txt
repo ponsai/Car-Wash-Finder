@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bubbles N Brilliance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/details.css">
+
+    <style>
+        body {
+            padding-bottom: 70px; /* Add padding to avoid content overlap with the footer */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #2F70AF;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>
+        <img src="css/icon_soap.svg" width="75" height="75" alt=""/>
+        Bubbles N Brilliance
+    </h1>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color:#2F70AF">
+    <div class="container">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav">
+                <li class="nav-item" >
+                    <a href="details.html" style="color:#f4f4f4" class="nav-link">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wash-finder.html" style="color:#f4f4f4" class="nav-link">Wash Finder</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" style="color:#f4f4f4" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login-home.html" style="color:#f4f4f4" class="nav-link">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End of Navbar -->
+
+<div class="container-fluid" id="trueBackground">
+    <div class="container-fluid" id="DetailsBackGround">
+        <div class="container-xxl">
+            <div class="row" id="amongus">
+                <div class="col-9">
+                    <div class="row" id="DetailsContainer">
+                        <!-- Car wash cards will go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Review Form -->
+<div class="container mt-5 mb-5 pb-3">
+    <h2>Car Wash Review</h2>
+    <form action="submit_review.php" method="post" onsubmit="return showThankYouMessage()">
+        <div class="mb-3">
+            <label for="customerName" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="customerName" name="customerName" required>
+        </div>
+        <div class="mb-3">
+            <label for="visitDate" class="form-label">Visit Date:</label>
+            <input type="date" class="form-control" id="visitDate" name="visitDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="review" class="form-label">Review:</label>
+            <textarea class="form-control" id="review" name="review" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+    
+    <!-- Thank you message (initially hidden) -->
+    <div id="thankYouMessage" style="display: none;">
+        <p class="text-success">Thank you for leaving a review!</p>
+    </div>
+</div>
+<!-- End of Review Form -->
+
+<!-- Sticky Footer -->
+<footer style="background-color:#2F70AF; height: 60px;" class="p-3 text-white text-center">
+    <div class="container">
+        <p class="lead"> Copyright &copy; 2023 Bubbles N Brilliance</p>
+    </div>
+</footer>
+<!-- End of Sticky Footer -->
+
+<!-- JavaScript to show the Thank You message -->
+<script>
+    function showThankYouMessage() {
+        // Display the Thank You message and hide the form
+        document.getElementById("thankYouMessage").style.display = "block";
+        document.querySelector("form").style.display = "none";
+        
+        // Prevent the form from submitting (for demonstration purposes)
+        return false;
+    }
+</script>
+
+</body>
+<script src="details.js"></script>
+</html>
