@@ -36,10 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.div-Gap {
-  margin-bottom: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

@@ -1,14 +1,721 @@
 {
-  "users": [
+  "submissions": [
     {
-      "id": 1,
-      "email": "tcglao@gmail.com",
-      "password": "123"
+      "customerName": "Test user1",
+      "contactDetails": "12334543673",
+      "selectedServices": [
+        "Carwash Location 5-1",
+        "Carwash Location 5-3",
+        "Carwash Location 5-7",
+        "Carwash Location 5-8"
+      ],
+      "id": 1
     },
     {
-      "email": "tcglao@gmail.com",
-      "password": "1234",
+      "customerName": "Qwerty",
+      "contactDetails": "123456789",
+      "selectedServices": [
+        "Carwash Location 1-5",
+        "Carwash Location 1-3",
+        "Carwash Location 1-7"
+      ],
+      "id": 2
+    },
+    {
+      "customerName": "Test User 3",
+      "contactDetails": "345-678-9933",
+      "selectedServices": [
+        "Carwash Location 1-3",
+        "Carwash Location 1-5",
+        "Carwash Location 1-7"
+      ],
+      "id": 3
+    },
+    {
+      "customerName": "test user",
+      "contactDetails": "123456789",
+      "selectedServices": [
+        "Carwash Location 1-3",
+        "Carwash Location 1-5",
+        "Carwash Location 1-7"
+      ],
       "id": 4
+    },
+    {
+      "customerName": "test6",
+      "contactDetails": "1322456789",
+      "selectedServices": [
+        "Carwash Location 4-3",
+        "Carwash Location 4-4",
+        "Carwash Location 4-5"
+      ],
+      "id": 5
+    },
+    {
+      "customerName": "testuser123",
+      "contactDetails": "987654321",
+      "selectedServices": [
+        "Carwash Location 2-6",
+        "Carwash Location 2-7"
+      ],
+      "id": 6
+    },
+    {
+      "customerName": "test123 user",
+      "contactDetails": "987654321",
+      "selectedServices": [
+        "Carwash Location 2-3",
+        "Carwash Location 2-6"
+      ],
+      "id": 7
+    },
+    {
+      "customerName": "Test 123",
+      "contactDetails": "134256437",
+      "selectedServices": [
+        "Carwash Location 1-3",
+        "Carwash Location 1-5",
+        "Carwash Location 1-7"
+      ],
+      "id": 8
+    },
+    {
+      "customerName": "Test12",
+      "contactDetails": "123456789",
+      "selectedServices": [
+        "Carwash Location 2-6",
+        "Carwash Location 2-3"
+      ],
+      "id": 9
+    },
+    {
+      "customerName": "test32",
+      "contactDetails": "123442352356",
+      "selectedServices": [
+        "Carwash Location 1-2",
+        "Carwash Location 1-1"
+      ],
+      "id": 10
+    },
+    {
+      "customerName": "Test 123",
+      "contactDetails": "123456788",
+      "selectedServices": [
+        "Carwash Location 1-1",
+        "Carwash Location 1-2",
+        "Carwash Location 1-3"
+      ],
+      "id": 11
+    },
+    {
+      "customerName": "test211",
+      "contactDetails": "12233445566777",
+      "selectedServices": [
+        "Carwash Location 3-8"
+      ],
+      "id": 12
+    }
+  ],
+  "carWashData": [
+    {
+      "id": 1,
+      "name": "Location 1",
+      "address": "123 Sunny Street, Sunville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Location 2",
+      "address": "456 Bubbly Road, Bubbletown",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Paint Restore and Protection"
+        },
+        {
+          "id": 6,
+          "name": "Tyre Care"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Location 3",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 8,
+          "name": "COMBO -- Wax and Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Location 4",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Deodorization"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Location 5",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        },
+        {
+          "id": 8,
+          "name": "Ceramic Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Location 4",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Exterior Wash"
+        },
+        {
+          "id": 2,
+          "name": "Interior Cleaning"
+        },
+        {
+          "id": 3,
+          "name": "Full Detail"
+        },
+        {
+          "id": 4,
+          "name": "Deodorization"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Location 1",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Location 1",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Location 1",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Location 5",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 7,
+          "name": "Engine Bay Clean"
+        },
+        {
+          "id": 8,
+          "name": "Ceramic Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Location 3",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 8,
+          "name": "COMBO -- Wax and Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Location 3",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Location 3",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 8,
+          "name": "COMBO -- Wax and Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Location 6",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 4,
+          "name": "Headlight Restoration"
+        },
+        {
+          "id": 5,
+          "name": "Scratch Removal"
+        },
+        {
+          "id": 8,
+          "name": "Hand Wash with hot wax"
+        }
+      ],
+      "image": "1.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Location 3",
+      "address": "789 Sparkle Ave, Cleanville",
+      "services": [
+        {
+          "id": 1,
+          "name": "Full Service Wash(Exterior hand soap,Interior Vacuuming and Mat Cleaning)"
+        },
+        {
+          "id": 2,
+          "name": "Interior Detailing"
+        },
+        {
+          "id": 3,
+          "name": "Spray on Wax"
+        },
+        {
+          "id": 8,
+          "name": "COMBO -- Wax and Paint Protect"
+        }
+      ],
+      "image": "1.jpg"
     }
   ]
 }
