@@ -11,8 +11,14 @@
 * Footer
 */
 import React, { useState } from 'react';
-import '../CardGrid.css'; // Import the CSS file
+import './CardGrid.css'; // Import the CSS file
 
+// Import images dynamically
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+const images = importAll(require.context('./images', false, /\.(jpg)$/));
 const DetailGrid = () => {
 
     const detailData = [
@@ -21,42 +27,42 @@ const DetailGrid = () => {
             address: "123 Main St, City",
             overview: "Summary of Location 1",
             review: "Review of Location 1",
-            image: "/images/1.jpg",
+            image: images[0],
         },
         {
             name: "Carwash Location 2",
             address: "456 Elm St, City",
             overview: "Summary of Location 2",
             review: "Review of Location 2",
-            image: "/images/2.jpg",
+            image: images[1],
         },
         {
             name: "Carwash Location 3",
             address: "789 Oak St, City",
             overview: "Summary of Location 3",
             review: "Review of Location 3",
-            image: "/images/3.jpg",
+            image: images[2],
         },
         {
             name: "Carwash Location 4",
             address: "789 india St, City",
             overview: "Summary of Location 4",
             review: "Review of Location 4",
-            image: "/images/4.jpg",
+            image: images[3],
         },
         {
             name: "Carwash Location 5",
             address: "533 Normal St, City",
             overview: "Summary of Location 5",
             review: "Review of Location 5",
-            image: "/images/5.jpg",
+            image: images[4],
         },
         {
             name: "Carwash Location 6",
-            address: "sdsu",
+            address: "5500 Campanile Dr, San Diego, CA 92182",
             overview: "Summary of Location 6",
             review: "Review of Location 6",
-            image: "/images/6.jpg"
+            image: images[5]
         },
     ];
     /*
