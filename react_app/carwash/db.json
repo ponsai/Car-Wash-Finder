@@ -96,6 +96,15 @@
         "Carwash Location 1-1"
       ],
       "id": 10
+    },
+    {
+      "customerName": "test123",
+      "contactDetails": "123546436",
+      "selectedServices": [
+        "Carwash Location 1-1",
+        "Carwash Location 1-2"
+      ],
+      "id": 11
     }
   ],
   "carWashData": [
