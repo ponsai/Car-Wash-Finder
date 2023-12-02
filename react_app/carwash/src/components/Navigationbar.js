@@ -8,10 +8,11 @@ const NavigationBar = ({ cartCount }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Item><Nav.Link as={Link} to="/">Login</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/Details">Details</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/Locations">Locations</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/About">About</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/" style={{ color: "white" }}>Login</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/Details" style={{ color: "white" }}>Details</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/Locations" style={{ color: "white" }}>Locations</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/About" style={{ color: "white" }}>About</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/ReviewForm" style={{ color: "white" }}>Reviews</Nav.Link></Nav.Item>
       </Nav>
       <Nav className="ms-auto"> {/* This Right aligns this Nav */}
         <Nav.Link as={Link} to="/cart">
