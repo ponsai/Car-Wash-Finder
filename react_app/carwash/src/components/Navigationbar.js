@@ -1,26 +1,37 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
-const NavigationBar = ({ cartCount }) => (
-  <Navbar bg="light" expand="lg">
-    <Navbar.Brand as={Link} to="/">BnB</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Item><Nav.Link as={Link} to="/" style={{ color: "white" }}>Login</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/Details" style={{ color: "white" }}>Details</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/Locations" style={{ color: "white" }}>Locations</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/About" style={{ color: "white" }}>About</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={Link} to="/ReviewForm" style={{ color: "white" }}>Reviews</Nav.Link></Nav.Item>
-      </Nav>
-      <Nav className="ms-auto"> {/* This Right aligns this Nav */}
-        <Nav.Link as={Link} to="/cart">
-          <i className="bi-cart-fill"></i> Cart ({cartCount})
-        </Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
+
+const NavigationBar = ({ cartCount }) => {
+  return (
+    <Navbar style={{ backgroundColor: "#2F70AF" }} variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/" style={{ color: "#d8e5f0" }}>B n B</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav fill variant="tabs" className="me-auto">
+            <Nav.Item><Nav.Link as={NavLink} to="/" style={{ color: "#d8e5f0" }}>Home</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/Details" style={{ color: "#d8e5f0" }}>Details</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/About" style={{ color: "#d8e5f0" }}>About</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/ReviewForm" style={{ color: "#d8e5f0" }}>Reviews</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/wash-finder" style={{ color: "#d8e5f0" }}>WashFinder</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/support" style={{ color: "#d8e5f0" }}>Support</Nav.Link></Nav.Item>
+          </Nav>
+          <Nav>
+            <Nav.Link as={NavLink} to="/cart" style={{ color: "#d8e5f0" }}>
+              <i className="bi-cart-fill"></i>
+              {cartCount > 0 && (
+                <span className="cart-badge">{cartCount}</span>
+              )}
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
 export default NavigationBar;

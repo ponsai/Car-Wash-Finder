@@ -26,6 +26,12 @@ const Body = () => {
                     </div>
                 </div>
             </section>
+
+            <footer style={{ backgroundColor: '#2F70AF' }} className="p-5 text-white text-center position-relative">
+                <div className="container">
+                    <p className="lead"> Copyright &copy; 2023 Bubbles N Brilliance</p>
+                </div>
+            </footer>
         </div>
     );
 };

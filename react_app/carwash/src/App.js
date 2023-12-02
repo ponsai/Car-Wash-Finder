@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar'; // Choose the appropriate NavigationBar
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import Details from './components/Details';
 import Locations from './components/Locations';
@@ -13,6 +13,7 @@ import carWashData from './data/carWashData';
 import Header from "./components/review/Header";
 import Footer from "./components/review/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -22,26 +23,23 @@ function App() {
   };
 
   const handleFormSubmit = () => {
-    // Reset the cart after submission
-    setCart([]);
+    setCart([]); // Reset the cart after submission
   };
 
   return (
     <div className="App">
       <Router>
         <Header/>
-        <NavigationBar/>
+        <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
         <div className="container mt-4">
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/Details" element={<Details />} />
-            <Route path="/Locations" element={<Locations />} />
+            <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
             <Route path="/About" element={<About />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ReviewForm" element={<ReviewForm />} />
-            <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
             <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
-            {/* Add other routes as necessary */}
           </Routes>
         </div>
         <Footer/>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 const Cart = ({ selectedServices, carWashData, onFormSubmit }) => {
-  // Utility function to find service details by ID 
+  // Utility function to find service details by ID
   const findServiceById = (id) => {
     return carWashData.flatMap(carwash => carwash.services).find(service => service.id === id);
   };

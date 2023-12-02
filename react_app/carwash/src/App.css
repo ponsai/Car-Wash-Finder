@@ -43,3 +43,16 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Cart badge styling */
+.cart-badge {
+  background-color: #ff4500;
+  color: #d8e5f0;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: relative;
+  left: -10px;
+  top: -8px;
+}
+
