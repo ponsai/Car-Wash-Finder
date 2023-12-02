@@ -12,6 +12,9 @@ const NavigationBar = ({ cartCount }) => (
         <Nav.Link as={Link} to="/wash-finder">WashFinder</Nav.Link>
         <Nav.Link as={Link} to="/about">About Us</Nav.Link>
         <Nav.Link as={Link} to="/support">Support</Nav.Link>
+        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+        <Nav.Link as={Link} to="/details">Details</Nav.Link>
+        <Nav.Link as={Link} to="/locations">Locations</Nav.Link>
       </Nav>
       <Nav className="ms-auto">  {/* Right align this Nav */}
         <Nav.Link as={Link} to="/cart">
