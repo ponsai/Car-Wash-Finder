@@ -1,5 +1,6 @@
 import './App.css';
 import Navigationbar from './components/Navigationbar';
+import Footer from './components/Footer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import Details from './components/Details';
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/About" component={About} />
           </Switch>
           </Router>
+          <Footer/>
     </div>
   );
 }

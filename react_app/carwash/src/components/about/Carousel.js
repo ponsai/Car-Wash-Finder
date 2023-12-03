@@ -12,7 +12,7 @@ function AboutCarousel() {
   useEffect(async () => {
     try {
       if(!imagesData){
-        let url = 'http://localhost:5000/about-us';
+        let url = 'http://localhost:8000/aboutus';
         const response = await fetch(url);
         const about_us_data = await response.json();
         setImagesData(about_us_data);
