@@ -13,7 +13,7 @@ const NavigationBar = ({ cartCount }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav fill variant="tabs" className="me-auto">
-            <Nav.Item><Nav.Link as={NavLink} to="/" style={{ color: "#d8e5f0" }}>Home</Nav.Link></Nav.Item>
+            <Nav.Item><Nav.Link as={NavLink} to="/" style={{ color: "#d8e5f0" }}>Login</Nav.Link></Nav.Item>
             <Nav.Item><Nav.Link as={NavLink} to="/Details" style={{ color: "#d8e5f0" }}>Details</Nav.Link></Nav.Item>
             <Nav.Item><Nav.Link as={NavLink} to="/About" style={{ color: "#d8e5f0" }}>About</Nav.Link></Nav.Item>
             <Nav.Item><Nav.Link as={NavLink} to="/ReviewForm" style={{ color: "#d8e5f0" }}>Reviews</Nav.Link></Nav.Item>
