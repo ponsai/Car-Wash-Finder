@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #2F70AF;
+  color: white;
+  text-align: center;
+  height: 60px;
+  line-height: 60px; /* Center text vertically */
+}
