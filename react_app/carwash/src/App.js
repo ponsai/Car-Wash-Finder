@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import Details from './components/Details';
@@ -11,9 +11,9 @@ import CarWashForm from './components/CarWashForm';
 import CheckoutProcess from './components/CheckoutProcess';
 import carWashData from './data/carWashData';
 import Header from "./components/review/Header";
-import Footer from "./components/review/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Footer from './components/Footer';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -43,7 +43,7 @@ function App() {
           </Routes>
         </div>
         <Footer/>
-      </Router>
+        </Router>
     </div>
   );
 }
