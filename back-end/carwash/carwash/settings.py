@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yz$1dit8wr^i*ci79ylpb8pw!%ar&w_2lsrpkqqszj@j_0u%sj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'account',   
     'aboutUs',
+    'locations',
     "corsheaders",
 ]
 
@@ -134,7 +135,7 @@ DATABASES = {
         'USER': 'myuser',
         'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
