@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import Details from './components/Details';
@@ -14,6 +14,8 @@ import Header from "./components/review/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Footer from './components/Footer';
+import PrivateRoutes from "./components/PrivateRoute";
+import { AuthProvider } from "./components/AuthContext";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,20 +31,24 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <AuthProvider>
         <Header/>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
         <div className="container mt-4">
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/Details" element={<Details />} />
-            <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
-            <Route path="/About" element={<About />} />
+            <Route element={<PrivateRoutes/>}>
+              <Route path="/" element={<Home />} />
+              <Route path="/Details" element={<Details />} />
+              <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/ReviewForm" element={<ReviewForm />} />
+              <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
+            </Route>
             <Route path="/Login" element={<Login />} />
-            <Route path="/ReviewForm" element={<ReviewForm />} />
-            <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
           </Routes>
         </div>
         <Footer/>
+        </AuthProvider>
         </Router>
     </div>
   );
