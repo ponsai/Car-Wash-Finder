@@ -13,20 +13,10 @@ function ContactCardGroup() {
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" height='180rem' src={image1} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Arjuna Reddy</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Chief Froth Officer
         </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
         </Col>
@@ -34,20 +24,11 @@ function ContactCardGroup() {
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" height='180rem' src={image1} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Blake</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Chief Sparkle Officer
+
         </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
         </Col>
@@ -55,42 +36,36 @@ function ContactCardGroup() {
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" height='180rem' src={image1} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Huzaifa</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Chief Humorist
         </Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+
     </Card>
         </Col>
         <Col xs={6} md={3}>
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" height='180rem' src={image1} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Rodrigo Sosa</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Chief Bubble Officer
         </Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
+
+    </Card>
+        </Col>
+        <Col xs={6} md={3}>
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" height='180rem' src={image1} />
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Title>Vasundara Hosahalli Boregowda </Card.Title>
+        <Card.Text>
+        Chief Bubble Liaison
+        </Card.Text>
       </Card.Body>
+
     </Card>
         </Col>
       </Row>
