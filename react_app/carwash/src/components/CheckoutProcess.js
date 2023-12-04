@@ -11,12 +11,14 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
     const formData = {
       customerName,
       contactDetails,
-      selectedServices
+      // selectedServices
+      selectedServices: "ABC"
     };
 
     try {
-      const response = await fetch('http://localhost:5000/submissions', {
+      const response = await fetch('http://localhost:8000/locations/create/', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'
         },
