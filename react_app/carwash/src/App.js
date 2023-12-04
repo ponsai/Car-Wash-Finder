@@ -37,7 +37,7 @@ function App() {
         <div className="container mt-4">
           <Routes>
             <Route element={<PrivateRoutes/>}>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
               <Route path="/Details" element={<Details />} />
               <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
               <Route path="/About" element={<About />} />
