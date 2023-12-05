@@ -6,11 +6,8 @@ function PlainCard() {
       <Card.Body>
         <Card.Title style={{fontSize: '40px' }}>Our Mission</Card.Title>
         <Card.Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Are you sick and weary of looking for a car wash that doesn't handle your car like it's trying to go on a spa every single day? You've found the most inventive and bubbly car wash finder on the internet, so stop looking elsewhere!
+Finding the ideal car wash can be serious, but at Bubbles and Brilliance, we take the seriousness out of it and add a dash of humor as bubbly as our foam weapons. We're more than simply a website; we're your neighborhood companion in your search for the most dazzling vehicle.
         </Card.Text>
       </Card.Body>
     </Card>
