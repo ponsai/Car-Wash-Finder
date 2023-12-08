@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -7,54 +8,12 @@ const LoginForm = () => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+    const navigate=useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
+        navigate('/wash-finder')
 
-        try {
-            const method = isSignIn ? 'GET' : 'POST';
-            let url = 'http://localhost:5000/users';
-
-            if (isSignIn && method === 'GET') {
-                const response = await fetch(url);
-                const userData = await response.json();
-
-                // Check if there is no user with the provided email and password
-                const matchingUser = userData.find((user) => user.email === email && user.password === password);
-
-                if (!matchingUser) {
-                    setError('Invalid email or password');
-                    setSuccessMessage('');
-                    return;
-                }
-
-                setSuccessMessage('Login successful.');
-                setError('');
-                return;
-            }
-
-            // Continue with the existing POST request for sign-up
-            const response = await fetch(url, {
-                method,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: method === 'POST' ? JSON.stringify({ email, password }) : undefined,
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setSuccessMessage(isSignIn ? 'Login successful.' : 'Sign up successful.');
-                setError('');
-            } else {
-                setError(data.error);
-                setSuccessMessage('');
-            }
-        } catch (error) {
-            setError('Request failed. Please try again.');
-            setSuccessMessage('');
-        }
-    };
+    }
 
     return (
         <div className="">

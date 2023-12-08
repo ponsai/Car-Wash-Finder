@@ -12,6 +12,7 @@
 */
 import React, { useState } from 'react';
 import './CardGrid.css'; // Import the CSS file
+import { Link } from "react-router-dom"
 
 // Import images dynamically
 function importAll(r) {
@@ -75,12 +76,15 @@ const DetailGrid = () => {
         setUserRatings(newRatings);
     };
 */
+    // const handleNavigation = (location) => {
+    //     redirect('/services')
+    // }
     return (
 
         <div className="card-grid">
             {detailData.map((location, index) => (
                 <div key={index} className="card">
-                    <h2>{location.name}</h2>
+                    <Link to='/services' state={location}><h2>{location.name}</h2></Link>
                     <img src={location.image} alt={`Location ${index + 1}`} />
                     <div className="info-section">
                         <p className="label">Address</p>

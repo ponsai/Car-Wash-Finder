@@ -19,6 +19,7 @@ body.details-page {
     gap: 25px;
     padding: 20px;
     background-color: #00457e;
+    overflow-y: scroll;
 }
 
 .card {

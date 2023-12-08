@@ -52,14 +52,12 @@ const CarWashForm = ({ onCartUpdate }) => {
             </Card>
           </Col>
         ))}
+           
+        
       </Row>
-      <Row className="mt-3">
-        <Col md={{ span:12 , offset: 12 }}>
-          <Button variant="primary" type="submit" onClick={handleSubmit} block>
+      <Button class="btn-primary" variant="primary" type="submit" onClick={handleSubmit} style={{marginBottom: '10px'}}>
             Add Services to the Cart
           </Button>
-        </Col>
-      </Row>
     </>
   );
 };
