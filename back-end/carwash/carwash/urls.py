@@ -22,13 +22,13 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/', include('account.urls')),
     path('aboutus/', include('aboutUs.urls')), #new
     path('locations/', include('locations.urls')),
     path('Details/', include('DetailsApp.urls')),
     path('api/', include('reviews.urls')),
     path('', DetailsAppView.as_view(), name = "anything"),
-
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
 ]
 
 if settings.DEBUG:

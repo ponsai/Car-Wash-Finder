@@ -38,7 +38,7 @@ function App() {
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Login />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ResetPassword" element={<ResetPassword />} />
             <Route path="/ResetPasswordConfirm" element={<ResetPasswordConfirm />} />
