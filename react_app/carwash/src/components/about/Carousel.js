@@ -1,29 +1,14 @@
-import React, {useState, useEffect} from "react"; 
+import React, {useState} from "react"; 
 import Carousel from 'react-bootstrap/Carousel';
+import { aboutUsData } from '../../data/aboutUsData';
 
 function AboutCarousel() {
   const [index, setIndex] = useState(0);
-  const [imagesData, setImagesData] = useState(null);
+  const [imagesData, setImagesData] = useState(aboutUsData);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-
-  useEffect(async () => {
-    try {
-      if(!imagesData){
-        let url = 'http://localhost:8000/aboutus';
-        const response = await fetch(url);
-        const about_us_data = await response.json();
-        setImagesData(about_us_data);
-      }
-
-  } catch (error) {
-    console.log(error);
-  }
-  })
-
-
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
