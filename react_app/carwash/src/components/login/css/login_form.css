@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/login-background.jpg'); /* Local path to the image in your project */
+    background-size: cover;
+    background-position: center center;
+}
+
+.login-form {
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Teko', sans-serif; /* Applying the custom font */
+}
+
+.overlay-form {
+    /* Additional styling for overlay form */
+    background-color: #f8f8f8; /* Example background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #283273; /* Improved label color for better contrast */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for focus */
+}
+
+.input-group input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 1px 6px rgba(46, 49, 146, 0.2); /* Shadow effect on focus */
+}
+
+.forgot-password {
+    padding: 10px;
+    text-align: right;
+}
+
+.signup-link {
+    margin-top: 20px;
+}
+
+.signup-link p {
+    color: #6f729c; /* Subtle color for text */
+}
+
+button {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background-image: linear-gradient(to right, #6e48aa, #9d50bb); /* Gradient button background */
+    color: white;
+    border-radius: 25px; /* Rounded corners for the button */
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600; /* Making the text a bit bolder */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #9d50bb, #6e48aa); /* Invert gradient on hover */
+}

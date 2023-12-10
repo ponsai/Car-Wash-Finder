@@ -1,46 +1,69 @@
-import React, {useContext} from 'react'
-import AuthContext from "../AuthContext";
+import React, {useState} from 'react';
+import './css/login_form.css';
+import { Navigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {login} from "../../actions/auth";
+import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
-    let {loginUser} = useContext(AuthContext)
+const LoginForm = ({ login, isAuthenticated }) => {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
+
+    if(isAuthenticated){
+        return <Navigate replace to='/'/>
+    }
+
+    const {email, password } = formData;
+    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+
+    const onSubmit = e => {
+        e.preventDefault()
+        login(email, password);
+    };
+
     return (
-        <div className="">
-            <div className="card">
-                <div className="card-body py-5 px-md-5">
-                    <form onSubmit={loginUser}>
-                        <div className="form-outline mb-4">
-                            <input
-                                type="text"
-                                name="username"
-                                placeholder="Enter Username"
-                                id="form1"
-                                className="form-control"
-                            />
-                            <label className="form-label" htmlFor="form1">
-                                Email
-                            </label>
-                        </div>
-
-                        <div className="form-outline mb-4">
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Enter Password"
-                                id="form2"
-                                className="form-control"
-                            />
-                            <label className="form-label" htmlFor="form2">
-                                Password
-                            </label>
-                        </div>
-                        <button type="submit" className="btn btn-primary btn-block btn-xl">
-                            Submit
-                        </button>
-                    </form>
+        <div className="login-container">
+            <form className="login-form" onSubmit={onSubmit}>
+                <h2>Login</h2>
+                <div className="input-group">
+                    <label>Email:</label>
+                    <input
+                        type = 'email'
+                        placeholder = 'Enter your email'
+                        name = 'email'
+                        value = {email}
+                        onChange={e => onChange(e)}
+                        required
+                    />
                 </div>
-            </div>
+                <div className="input-group">
+                    <label>Password:</label>
+                    <input
+                        type = 'password'
+                        placeholder = 'Enter your password'
+                        name = 'password'
+                        value = {password}
+                        onChange={e => onChange(e)}
+                        minLength= '6'
+                        required
+                    />
+                </div>
+                <div className="forgot-password">
+                    <Link to="../ResetPassword">Forgot password?</Link>
+                </div>
+                <button type="submit">LOGIN</button>
+                <div className="signup-link">
+                    <a href="#">SIGN UP</a>
+                </div>
+            </form>
         </div>
-    );
+    )
 };
 
-export default LoginForm;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps, { login })(LoginForm);
