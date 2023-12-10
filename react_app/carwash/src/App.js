@@ -31,7 +31,7 @@ function App() {
       <Router>
         <Header/>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
-        <div className="container mt-4">
+        <div className="container mt-4 mb-5 pb-5">
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/Details" element={<Details />} />
