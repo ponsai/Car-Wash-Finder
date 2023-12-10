@@ -1,4 +1,5 @@
 import React ,{useEffect} from 'react';
+import './style.css';
 import { useLocation } from 'react-router-dom';
 
 
@@ -10,7 +11,13 @@ const Services = () => {
       }, [location])
 
   return (
-    <div>Services</div>
+    <div className="service-container">
+      <img src={location?.state?.image} alt='carwash service' />
+      <h3>{location?.state?.name}</h3>
+      <p>Address: {location?.state?.address}</p>
+      <p>Overview: {location?.state?.overview}</p>
+      <p>Review: {location?.state?.review}</p>
+    </div>
   )
 }
 

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
-import Home from './components/Home';
 import Details from './components/Details';
-import Locations from './components/Locations';
 import About from './components/About';
 import Login from './components/Login';
 import ReviewForm from './components/ReviewForm';
@@ -13,6 +11,7 @@ import carWashData from './data/carWashData';
 import Header from "./components/review/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Services from './components/services'
 import Footer from './components/Footer';
 
 function App() {
@@ -37,6 +36,7 @@ function App() {
             <Route path="/Details" element={<Details />} />
             <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
             <Route path="/About" element={<About />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ReviewForm" element={<ReviewForm />} />
             <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />

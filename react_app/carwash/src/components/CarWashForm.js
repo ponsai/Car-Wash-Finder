@@ -33,8 +33,8 @@ const CarWashForm = ({ onCartUpdate }) => {
     <>
       <Row>
         {carWashData.map((carwash, index) => (
-          <Col md={4} key={index}>
-            <Card className="mb-3">
+          <Col md={8} key={index}>
+            <Card className="mb-1">
               <Card.Img variant="top" src={carwash.image} alt={carwash.name} />
               <Card.Body>
                 <Card.Title>{carwash.name}</Card.Title>
