@@ -26,6 +26,7 @@ urlpatterns = [
     path('aboutus/', include('aboutUs.urls')), #new
     path('locations/', include('locations.urls')),
     path('Details/', include('DetailsApp.urls')),
+    path('api/', include('reviews.urls')),
     path('', DetailsAppView.as_view(), name = "anything"),
 
 ]

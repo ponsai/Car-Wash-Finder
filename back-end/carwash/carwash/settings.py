@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'locations',
     "corsheaders",
     'DetailsApp',
+    'reviews',
 ]
 
 MIDDLEWARE = [
