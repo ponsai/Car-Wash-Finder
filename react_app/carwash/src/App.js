@@ -38,10 +38,10 @@ function App() {
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
         <div>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Details />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ResetPassword" element={<ResetPassword />} />
-            <Route path="/ResetPasswordConfirm" element={<ResetPasswordConfirm />} />
+            <Route path="/ResetPassword/ResetPasswordConfirm/" element={<ResetPasswordConfirm />} />
             <Route path="/Details" element={<Details />} />
             <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
             <Route path="/About" element={<About />} />

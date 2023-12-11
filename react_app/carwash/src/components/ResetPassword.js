@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './login/css/login_form.css';
 import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { reset_password } from "../actions/auth";
 
@@ -8,7 +9,7 @@ const ResetPassword = ({ reset_password }) => {
     const [requestSent, setRequestSent] = useState(false);
 
     const [formData, setFormData] = useState({
-        email: '',
+        email: ''
     });
 
     if(requestSent){
