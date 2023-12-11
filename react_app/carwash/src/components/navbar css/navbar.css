@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header {
+    background-color: #2F70AF;
+    border-bottom: 1px solid #333;
+}
+
+.nav-link {
+    background-color: #2F70AF;
+    color: white !important;
+    border-radius: 20px;
+    padding: .5rem 1rem;
+    margin: 0 .25rem;
+    transition: background-color 0.1s;
+}
+
+.nav-link:hover {
+    background-color: #357abd;
+    color: white !important;
+}
+
+
+.nav-link {
+    border: none !important;
+}
+
+
+.bi-cart-fill {
+    color: white;
+}
+
+.nav-button {
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.2s;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.nav-button:hover {
+    background-color: #357abd;
+}
+
+.navbar-brand-text {
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 3rem;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+
+}
+
+.cart-link {
+    color: #4a90e2;
+    font-weight: bold;
+}

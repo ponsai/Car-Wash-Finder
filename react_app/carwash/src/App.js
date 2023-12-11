@@ -13,6 +13,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Services from './components/services'
 import Footer from './components/Footer';
+import { Provider } from 'react-redux';
+import store from "./store";
+import ResetPassword from "./components/ResetPassword";
+import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -27,23 +32,25 @@ function App() {
 
   return (
     <div className="App">
+      <Provider store={store}>
       <Router>
-        <Header/>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
-        <div className="container">
+        <div className='pb-5'>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Details />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/ResetPassword" element={<ResetPassword />} />
+            <Route path="/ResetPassword/ResetPasswordConfirm/" element={<ResetPasswordConfirm />} />
             <Route path="/Details" element={<Details />} />
             <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
             <Route path="/About" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/Login" element={<Login />} />
             <Route path="/ReviewForm" element={<ReviewForm />} />
             <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
           </Routes>
         </div>
         <Footer/>
         </Router>
+      </Provider>
     </div>
   );
 }

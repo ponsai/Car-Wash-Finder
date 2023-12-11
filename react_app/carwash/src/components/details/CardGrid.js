@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CardGrid.js
 * Add this into detail page
 * This is just a component
@@ -13,15 +14,27 @@
 import React, { useState } from 'react';
 import './CardGrid.css'; // Import the CSS file
 import { Link } from "react-router-dom"
+=======
+// src/components/CardGrid.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './CardGrid.css';
+>>>>>>> main
 
-// Import images dynamically
-function importAll(r) {
-    return r.keys().map(r);
-}
+const CardGrid = () => {
+    const [detailData, setDetailData] = useState([]);
 
-const images = importAll(require.context('./images', false, /\.(jpg)$/));
-const DetailGrid = () => {
+    useEffect(() => {
+        axios.get('http://localhost:8000/Details/api/locations/')
+            .then(response => {
+                setDetailData(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
+<<<<<<< HEAD
     const detailData = [
         {
             name: "Carwash Location 1",
@@ -79,8 +92,9 @@ const DetailGrid = () => {
     // const handleNavigation = (location) => {
     //     redirect('/services')
     // }
+=======
+>>>>>>> main
     return (
-
         <div className="card-grid">
             {detailData.map((location, index) => (
                 <div key={index} className="card">
@@ -94,11 +108,8 @@ const DetailGrid = () => {
                         <p className="label">Overview</p>
                         <p className="value">{location.overview}</p>
                     </div>
-
-
-
                     <div className="info-section">
-                        <p className="label">Reviews</p>
+                        <p className="label">Review</p>
                         <p className="value">{location.review}</p>
                     </div>
                 </div>
@@ -107,4 +118,4 @@ const DetailGrid = () => {
     );
 };
 
-export default DetailGrid;
+export default CardGrid;
