@@ -36,7 +36,7 @@ function App() {
       <Provider store={store}>
       <Router>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
-        <div>
+        <div className='pb-5'>
           <Routes>
             <Route path="/" element={<Details />} />
             <Route path="/Login" element={<Login />} />

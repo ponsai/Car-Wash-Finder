@@ -11,13 +11,13 @@ function AboutCarousel() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel className="border-0 mt-5 rounded-2"activeIndex={index} onSelect={handleSelect}>
        {imagesData && imagesData.map((slide, i) => {
         const imageUrl = `data:image/png;base64,${slide.base64Image}`;
         return (
           <Carousel.Item>        
         <img
-          className="d-block w-100"
+          className="d-block border-0 rounded-2 w-100"
           src={imageUrl}
           alt="slider image"
         />
