@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import axios from 'axios';
 
 const CheckoutProcess = ({ selectedServices, carWashData }) => {
   const [customerName, setCustomerName] = useState('');
   const [contactDetails, setContactDetails] = useState('');
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,24 +15,18 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/locations/create/', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      if (response.ok) {
-        setShowModal(true);
+      const response = await axios.post('http://localhost:8000/locations/create/', formData);
+      
+      if (response.status === 200 || response.status === 201) {
+        alert(`Submission successful!\nName: ${customerName}\nContact Details: ${contactDetails}`);
       } else {
-        throw new Error('Network response was not ok.');
+        console.error('Server error:', response);
       }
     } catch (error) {
       console.error('Submission error:', error);
+      
     }
   };
-
   // Function to find the details of the selected services, including location
   const getServiceDetails = () => {
     return selectedServices.map(serviceKey => {
@@ -90,28 +85,7 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
         <Button type="submit" variant="primary" style={{backgroundColor:"#bb7e7a" }}>Submit</Button>
       </Form>
 
-      {/* Modal for displaying submission details */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Thank You!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p><strong>Name:</strong> {customerName}</p>
-          <p><strong>Contact Details:</strong> {contactDetails}</p>
-          {/*<p><strong>Location Address:</strong></p>*/}
-          <p><strong>Selected Services:</strong></p>          
-          <ul>
-            {selectedServiceDetails.map((service, index) => (
-              <li key={index}>{service.locationName}: {service.name}</li>
-            ))}
-          </ul>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+
     </div>
   );
 };
