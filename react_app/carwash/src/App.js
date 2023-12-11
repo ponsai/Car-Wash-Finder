@@ -14,8 +14,11 @@ import Header from "./components/review/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Footer from './components/Footer';
-import PrivateRoutes from "./components/PrivateRoute";
-import { AuthProvider } from "./components/AuthContext";
+import { Provider } from 'react-redux';
+import store from "./store";
+import ResetPassword from "./components/ResetPassword";
+import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -30,26 +33,25 @@ function App() {
 
   return (
     <div className="App">
+      <Provider store={store}>
       <Router>
-        <AuthProvider>
-        <Header/>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
-        <div className="container mt-4 mb-5 pb-5">
+        <div>
           <Routes>
-            <Route element={<PrivateRoutes/>}>
-              <Route path="/" element={<Login />} />
-              <Route path="/Details" element={<Details />} />
-              <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/ReviewForm" element={<ReviewForm />} />
-              <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
-            </Route>
+            <Route path="/" element={<Details />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/ResetPassword" element={<ResetPassword />} />
+            <Route path="/ResetPassword/ResetPasswordConfirm/" element={<ResetPasswordConfirm />} />
+            <Route path="/Details" element={<Details />} />
+            <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/ReviewForm" element={<ReviewForm />} />
+            <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
           </Routes>
         </div>
         <Footer/>
-        </AuthProvider>
         </Router>
+      </Provider>
     </div>
   );
 }
