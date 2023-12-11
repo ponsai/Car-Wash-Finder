@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = ({ cartCount }) => (
-  <Navbar style={{ backgroundColor: "#2F70AF" }} variant="dark">
+  <Navbar style={{ backgroundColor: "#2F70AF", height: "6vh" }} variant="dark">
     <Navbar.Brand as={Link} to="/"></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

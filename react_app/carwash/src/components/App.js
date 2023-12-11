@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Router>
       <NavigationBar cartCount={cart.length} />
-      <div className="container mt-4">
+      <div className="container" style={{ height: "80vh", overflow: "auto", padding: "16px 172px"}}>
         <Routes>
           <Route path='/services' element={<Services/>} />
           <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />

@@ -10,9 +10,7 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
     event.preventDefault();
     const formData = {
       customerName,
-      contactDetails,
-      // selectedServices
-      selectedServices: "ABC"
+      contactDetails
     };
 
     try {
@@ -47,39 +45,49 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
   const selectedServiceDetails = getServiceDetails();
 
   return (
-    <div>
-      <h3>Selected Services</h3>
+    <div style={{height: "calc(100vh - 198px)", paddingTop: "32px"}}>
+      <h3  style={{display: "flex"}}>Selected Services</h3>
       {selectedServiceDetails.length > 0 ? (
-        <ul>
-          {selectedServiceDetails.map((service, index) => (
-            <li key={index}>
-              {service.locationName}: {service.name} (Address: {service.address})
-            </li>
-          ))}
-        </ul>
+        <div style={{display: "flex"}}>
+          <ul style={{listStyle: "none", padding: 0}}>
+            {selectedServiceDetails.map((service, index) => (
+              <li key={index}>
+                <strong>{service.locationName}:</strong> {service.name} (Address: {service.address})
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : (
         <p>No services selected</p>
       )}
       <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Name</Form.Label>
-          <Form.Control
+        <Form.Group style={{margin: "24px 0px"}}>
+          <Form.Label style={{float: "left", margingRight: "16px", width: "20%"}}>
+            <span style={{color: "red"}}>*</span> Name :
+          </Form.Label>
+          <Form.Control 
             type="text"
             required
+            style={{width: "80%"}}
+            placeholder="Enter the name"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Contact Details</Form.Label>
+        <Form.Group style={{margin: "24px 0px"}}>
+          <Form.Label style={{float: "left", margingRight: "16px", width: "20%"}}>
+            <span style={{color: "red"}}>*</span> Contact Details :
+          </Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             required
+            style={{width: "80%"}}
+            placeholder="Enter the contact number"
             value={contactDetails}
             onChange={(e) => setContactDetails(e.target.value)}
           />
         </Form.Group>
-        <Button type="submit" variant="primary">Submit</Button>
+        <Button type="submit" variant="primary" style={{backgroundColor:"#bb7e7a" }}>Submit</Button>
       </Form>
 
       {/* Modal for displaying submission details */}
