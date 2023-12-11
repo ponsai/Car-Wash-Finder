@@ -85,8 +85,7 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
         </Form.Group>
         <Button type="submit" variant="primary" style={{backgroundColor:"#bb7e7a" }}>Submit</Button>
       </Form>
-
-
+      
     </div>
   );
 };
