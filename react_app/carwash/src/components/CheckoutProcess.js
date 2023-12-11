@@ -11,7 +11,8 @@ const CheckoutProcess = ({ selectedServices, carWashData }) => {
     event.preventDefault();
     const formData = {
       customerName,
-      contactDetails
+      contactDetails,
+      selectedServices : "ABC"
     };
 
     try {
