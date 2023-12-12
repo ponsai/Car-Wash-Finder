@@ -64,8 +64,9 @@ const CardGrid = () => {
                         <p className="value">{location.overview}</p>
                     </div>
                     <div className="info-section">
-                        <p className="label">Reviews</p>
-                        <p className="value">{location.review}</p>
+                        <p className="label"><a href="/ReviewForm">Reviews</a></p>
+                        {/* Created redirection to Review Page and Commented this static review out. - Huzaifa*/}
+                        {/* <p className="value">{location.review}</p> */}
                     </div>
                 </div>
             ))}
