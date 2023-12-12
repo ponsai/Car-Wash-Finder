@@ -51,12 +51,9 @@ const LoginForm = ({ login, isAuthenticated }) => {
                         required
                     />
                 </div>
-                <div className="forgot-password">
-                    <Link to="../ResetPassword">Forgot password?</Link>
-                </div>
                 <button type="submit">LOGIN</button>
                 <div className="signup-link">
-                    <a href="#">SIGN UP</a>
+                    <Link to="../SignUp">Sign Up</Link>
                 </div>
             </form>
         </div>

@@ -5,6 +5,8 @@ import {
     USER_LOADED_FAIL,
     AUTHENTICATED_SUCCESS,
     AUTHENTICATED_FAIL,
+    SIGNUP_SUCCESS,
+    SIGNUP_FAIL,
     LOGOUT
 } from "../actions/types";
 
@@ -32,6 +34,12 @@ export default function(state = initialState, action){
                 access: payload.access,
                 refresh: payload.refresh
             }
+        case SIGNUP_SUCCESS:
+            return {
+                ...state,
+                isAuthenticated: false
+            }
+        case SIGNUP_FAIL:
         case LOGIN_FAIL:
         case LOGOUT:
                 localStorage.removeItem('access');

@@ -24,40 +24,40 @@ const CarWashForm = ({ onCartUpdate }) => {
   };
 
   return (
-    <>
-      <Row>
-        {carWashData.map((carwash, index) => (
-          <Col md={6} key={index}>
-            <Card className="mb-3" style={{minHeight:"61vh", paddingBottom:0, backgroundColor: "#eee"}}>
-              <Card.Img variant="top" src={carwash.image} alt={carwash.name} />
-              <Card.Body>
-                <Card.Title>{carwash.name}</Card.Title>
-                <Card.Text>{carwash.address}</Card.Text>
-                {carwash.services.map(service => (
-                  <Form.Check 
-                    type="checkbox"
-                    label={service.name}
-                    key={service.id}
-                    checked={selectedServices.has(`${carwash.name}-${service.id}`)}
-                    onChange={() => handleServiceChange(carwash.name, service.id)}
-                  />
-                ))}
-                {/* Add to Cart button for each card */}
-                <div style={{display: "flex", justifyContent: "center" }}>
-                  <Button 
-                    variant="primary" 
-                    onClick={() => handleSubmit()}
-                    style={{ marginTop: '10px', backgroundColor:"#bb7e7a" }}
-                  >
-                    Add Services to Cart
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </>
+      <>
+        <Row>
+          {carWashData.map((carwash, index) => (
+              <Col md={7} key={index}>
+                <Card className="mb-3" style={{minHeight:"61vh", paddingBottom:0, float: "center" , backgroundColor: "#eee"}}>
+                  <Card.Img variant="top" src={carwash.image} alt={carwash.name} />
+                  <Card.Body>
+                    <Card.Title>{carwash.name}</Card.Title>
+                    <Card.Text>{carwash.address}</Card.Text>
+                    {carwash.services.map(service => (
+                        <Form.Check
+                            type="checkbox"
+                            label={service.name}
+                            key={service.id}
+                            checked={selectedServices.has(`${carwash.name}-${service.id}`)}
+                            onChange={() => handleServiceChange(carwash.name, service.id)}
+                        />
+                    ))}
+                    {/* Add to Cart button for each card */}
+                    <div style={{display: "flex", justifyContent: "center" }}>
+                      <Button
+                          variant="primary"
+                          onClick={() => handleSubmit()}
+                          style={{ marginTop: '10px', backgroundColor:"#bb7e7a" }}
+                      >
+                        Add Services to Cart
+                      </Button>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+          ))}
+        </Row>
+      </>
   );
 };
 

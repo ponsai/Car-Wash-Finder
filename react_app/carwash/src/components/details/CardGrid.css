@@ -1,17 +1,19 @@
 /* CardGrid.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 body.details-page {
     background-color: #117fff ;
 }
 
 .details-container {
     background-color: #00457e;
-    margin-bottom: 75px;
+    padding-bottom:  75px;
 }
 
 .details-container h1{
-
+    padding-top: 30px;
     font-weight: bold;
     color: #ffffff; /* Text color */
+    font-family: 'Bebas Neue', sans-serif;
 }
 .card-grid {
     display: grid;
@@ -19,12 +21,11 @@ body.details-page {
     gap: 25px;
     padding: 20px;
     background-color: #00457e;
-    overflow-y: scroll;
 }
 
 .card {
 
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -76,5 +77,5 @@ body.details-page {
 }
 
 .card .reviews {
-    /* Add specific styles for the reviews section if needed */
+    /* Style reviews inside */
 }

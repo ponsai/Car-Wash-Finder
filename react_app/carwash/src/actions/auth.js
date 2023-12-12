@@ -10,6 +10,8 @@ import{
     PASSWORD_RESET_CONFIRM_FAIL,
     PASSWORD_RESET_SUCCESS,
     PASSWORD_RESET_FAIL,
+    SIGNUP_SUCCESS,
+    SIGNUP_FAIL,
     LOGOUT
 } from "./types";
 
@@ -97,6 +99,29 @@ export const login = (email, password) => async dispatch => {
     } catch (err) {
         dispatch ({
             type:LOGIN_FAIL,
+        })
+    }
+};
+
+export const signup = (name, email, password, re_password) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    const body = JSON.stringify({ name, email, password, re_password });
+
+    try {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/`, body, config);
+
+        dispatch({
+            type: SIGNUP_SUCCESS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: SIGNUP_FAIL
         })
     }
 };

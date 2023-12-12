@@ -17,6 +17,7 @@ import { Provider } from 'react-redux';
 import store from "./store";
 import ResetPassword from "./components/ResetPassword";
 import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
+import SignUp from "./components/SignUp";
 
 
 function App() {
@@ -35,9 +36,10 @@ function App() {
       <Provider store={store}>
       <Router>
         <NavigationBar cartCount={cart.length}/> {/* Pass the cart length to the NavigationBar */}
-        <div className='pb-5'>
+        <div>
           <Routes>
             <Route path="/" element={<Details />} />
+            <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/ResetPassword" element={<ResetPassword />} />
             <Route path="/ResetPassword/ResetPasswordConfirm/" element={<ResetPasswordConfirm />} />

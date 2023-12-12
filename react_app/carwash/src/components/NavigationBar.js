@@ -29,7 +29,6 @@ const NavigationBar = ({ logout, isAuthenticated, cartCount }) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Item><Nav.Link as={Link} to="/Login" className="nav-button">Home</Nav.Link></Nav.Item>
                             {isAuthenticated ? authLinks() : guestLinks()}
                             <Nav.Item><Nav.Link as={Link} to="/Details" className="nav-button">Details</Nav.Link></Nav.Item>
                             <Nav.Item><Nav.Link as={Link} to="/wash-finder" className="nav-button">Locations</Nav.Link></Nav.Item>
