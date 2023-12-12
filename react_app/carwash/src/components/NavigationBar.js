@@ -6,6 +6,7 @@ import mainLogo from'./logo.png';
 import { connect } from "react-redux";
 import { logout} from "../actions/auth";
 
+
 const NavigationBar = ({ logout, isAuthenticated, cartCount }) => {
     const guestLinks = () => (
         <Fragment>

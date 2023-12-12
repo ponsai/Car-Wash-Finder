@@ -24,7 +24,7 @@ from datetime import timedelta
 SECRET_KEY = 'django-insecure-yz$1dit8wr^i*ci79ylpb8pw!%ar&w_2lsrpkqqszj@j_0u%sj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -58,6 +58,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+# CORS configuration
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]

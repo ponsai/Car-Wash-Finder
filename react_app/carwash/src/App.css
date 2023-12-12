@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-left: 10px;
 }
 
 .App-logo {
@@ -55,4 +56,10 @@
   left: -10px;
   top: -8px;
 }
+
+  /* .btn-primary {
+  position: fixed;
+  
+} */
+
 

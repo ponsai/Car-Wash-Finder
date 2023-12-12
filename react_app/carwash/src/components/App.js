@@ -6,6 +6,9 @@ import CarWashForm from './CarWashForm';
 import CheckoutProcess from './CheckoutProcess';
 import carWashData from '../data/carWashData';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Services from './services';
+
+
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -27,9 +30,9 @@ const App = () => {
   return (
     <Router>
       <NavigationBar cartCount={cart.length} />
-      <div className="container mt-4">
+      <div className="container" style={{ height: "80vh", overflow: "auto", padding: "16px 172px"}}>
         <Routes>
-          
+          <Route path='/services' element={<Services/>} />
           <Route path="/wash-finder" element={<CarWashForm onCartUpdate={handleCartUpdate} />} />
           <Route path="/cart" element={<CheckoutProcess selectedServices={cart} carWashData={carWashData} onFormSubmit={handleFormSubmit} />} />
           {/* Add other routes */}

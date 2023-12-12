@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
-import Home from './components/Home';
 import Details from './components/Details';
-import Locations from './components/Locations';
 import About from './components/About';
 import Login from './components/Login';
 import ReviewForm from './components/ReviewForm';
@@ -13,6 +11,7 @@ import carWashData from './data/carWashData';
 import Header from "./components/review/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Services from './components/services'
 import Footer from './components/Footer';
 import { Provider } from 'react-redux';
 import store from "./store";

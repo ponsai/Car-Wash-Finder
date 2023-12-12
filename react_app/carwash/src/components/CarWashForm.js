@@ -1,30 +1,24 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import carWashData from '../data/carWashData';
 
 const CarWashForm = ({ onCartUpdate }) => {
   const [selectedServices, setSelectedServices] = useState(new Set());
-  const [lastSelectedCarwash, setLastSelectedCarwash] = useState('');
   const navigate = useNavigate();
 
+  // Handles changes in service selection
   const handleServiceChange = (carwashName, serviceId) => {
-    if (lastSelectedCarwash !== carwashName) {
-      setSelectedServices(new Set([`${carwashName}-${serviceId}`]));
-      setLastSelectedCarwash(carwashName);
-    } else {
-      setSelectedServices(prevServices => {
-        const updatedServices = new Set(prevServices);
-        const serviceKey = `${carwashName}-${serviceId}`;
-        updatedServices.has(serviceKey) ? updatedServices.delete(serviceKey) : updatedServices.add(serviceKey);
-        return updatedServices;
-      });
-    }
+    setSelectedServices(prevServices => {
+      const updatedServices = new Set(prevServices);
+      const serviceKey = `${carwashName}-${serviceId}`;
+      updatedServices.has(serviceKey) ? updatedServices.delete(serviceKey) : updatedServices.add(serviceKey);
+      return updatedServices;
+    });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // Handles the submission of selected services
+  const handleSubmit = () => {
     onCartUpdate(Array.from(selectedServices));
     navigate('/cart');
   };
@@ -33,8 +27,8 @@ const CarWashForm = ({ onCartUpdate }) => {
     <>
       <Row>
         {carWashData.map((carwash, index) => (
-          <Col md={4} key={index}>
-            <Card className="mb-3">
+          <Col md={6} key={index}>
+            <Card className="mb-3" style={{minHeight:"61vh", paddingBottom:0, backgroundColor: "#eee"}}>
               <Card.Img variant="top" src={carwash.image} alt={carwash.name} />
               <Card.Body>
                 <Card.Title>{carwash.name}</Card.Title>
@@ -48,17 +42,20 @@ const CarWashForm = ({ onCartUpdate }) => {
                     onChange={() => handleServiceChange(carwash.name, service.id)}
                   />
                 ))}
+                {/* Add to Cart button for each card */}
+                <div style={{display: "flex", justifyContent: "center" }}>
+                  <Button 
+                    variant="primary" 
+                    onClick={() => handleSubmit()}
+                    style={{ marginTop: '10px', backgroundColor:"#bb7e7a" }}
+                  >
+                    Add Services to Cart
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Col>
         ))}
-      </Row>
-      <Row className="mt-3">
-        <Col md={{ span:12 , offset: 12 }}>
-          <Button variant="primary" type="submit" onClick={handleSubmit} block>
-            Add Services to the Cart
-          </Button>
-        </Col>
       </Row>
     </>
   );
