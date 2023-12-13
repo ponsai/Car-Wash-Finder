@@ -95,6 +95,7 @@ DJOSER = {
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': False,
+    'SEND_CONFIRMATION_EMAIL': False,
     'SERIALIZERS': {
         'user_create': 'account.serializers.UserCreateSerializer',
         'user': 'account.serializers.UserCreateSerializer',
@@ -136,13 +137,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = '[YOUR EMAIL]'
-EMAIL_HOST_PASSWORD = '[APP PASSWORD FROM GMAIL]'
-EMAIL_USE_TLS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
