@@ -6,4 +6,4 @@ from DetailsApp.models import *
 class DetailsAppSerializer(serializers.ModelSerializer):
     class Meta:
         model = DetailsApp
-        fields = ['name', 'image','address', 'overview', 'review']
+        fields = ['name', 'image','address', 'overview']

@@ -1,79 +1,77 @@
-// src/components/CardGrid.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './CardGrid.css';
 
 const CardGrid = () => {
-    // Hardcoded data
-    const detailData = [
-        {
-            name: "Carwash Location 1",
-            address: "123 Main St, City",
-            overview: "Summary of Location 1",
-            review: "Reviews of Location 1",
-            image: "/images/1.jpg",
-        },
-        {
-            name: "Carwash Location 2",
-            address: "456 Elm St, City",
-            overview: "Summary of Location 2",
-            review: "Reviews of Location 2",
-            image: "/images/2.jpg",
-        },
-        {
-            name: "Carwash Location 3",
-            address: "789 Oak St, City",
-            overview: "Summary of Location 3",
-            review: "Reviews of Location 3",
-            image: "/images/3.jpg",
-        },
-        {
-            name: "Carwash Location 4",
-            address: "789 india St, City",
-            overview: "Summary of Location 4",
-            review: "Reviews of Location 4",
-            image: "/images/4.jpg",
-        },
-        {
-            name: "Carwash Location 5",
-            address: "533 Normal St, City",
-            overview: "Summary of Location 5",
-            review: "Reviews of Location 5",
-            image: "/images/5.jpg",
-        },
-        {
-            name: "Carwash Location 6",
-            address: "sdsu",
-            overview: "Summary of Location 6",
-            review: "Reviews of Location 6",
-            image: "/images/5.jpg",
-        }
-    ];
+    const [detailData, setDetailData] = useState([]);
+    const [reviewData, setReviewData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+
+        const token = "django-insecure-yz$1dit8wr^i*ci79ylpb8pw!%ar&w_2lsrpkqqszj@j_0u%sj";
+
+        // Fetch locations
+        axios.get('http://localhost:8000/Details/api/locations/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setDetailData(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching location data:', error);
+            });
+
+        // Fetch reviews
+        axios.get('http://localhost:8000/api/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setReviewData(response.data);
+                setLoading(false); // Set loading to false once both requests are complete
+            })
+            .catch(error => {
+                console.error('Error fetching review data:', error);
+            });
+    }, []); // ensures that this effect runs once when the component mounts
+
+    // Combine location and review data
+    const combinedData = detailData.map((location, index) => ({
+        ...location,
+        review: reviewData[index] ? reviewData[index].review : '',
+        image: `./images/${location.id}.jpg`
+    }));
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <div className="card-grid">
-            {detailData.map((location, index) => (
+            {combinedData.map((combinedItem, index) => (
                 <div key={index} className="card">
-                    <h2>{location.name}</h2>
-                    <img src={location.image} alt={`Location ${index + 1}`} />
+                    <h2>{combinedItem.name}</h2>
+                    <img src={`/images/${index + 1}.jpg`} alt={`Location ${index + 1}`} />
                     <div className="info-section">
                         <p className="label">Address</p>
-                        <p className="value">{location.address}</p>
+                        <p className="value">{combinedItem.address}</p>
                     </div>
                     <div className="info-section">
                         <p className="label">Overview</p>
-                        <p className="value">{location.overview}</p>
+                        <p className="value">{combinedItem.overview}</p>
                     </div>
                     <div className="info-section">
-                        <p className="label"><a href="/ReviewForm">Reviews</a></p>
-                        {/* Created redirection to Review Page and Commented this static review out. - Huzaifa*/}
-                        {/* <p className="value">{location.review}</p> */}
+                        <p className="label">Review</p>
+                        <p className="value">{combinedItem.review}</p>
                     </div>
                 </div>
             ))}
-
         </div>
-
     );
 };
 
-export default CardGrid;
+export default CardGrid
