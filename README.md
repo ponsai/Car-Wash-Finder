@@ -10,3 +10,10 @@ Group Members: Blake Chanhmisay, Vasundara Hosahalli Boregowda, Huzaifa Huzaifa,
 5.Run "npm install" in the repository directory to install required dependencies
 6.Run "npm start" in orderto run the application
 7.Navigate to http://localhost:3000
+
+#Steps to Run the Backend
+1.Install dependencies
+2.pip freeze > requirements.txt to find the requirements
+3.pip install -r requirements.txt
+4.Move to back-end/carwash
+5.python manage.py runserver to run backend
